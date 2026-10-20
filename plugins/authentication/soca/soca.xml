@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension method="upgrade" type="plugin" group="authentication">
+  <name>SOCA authentication integration</name><version>0.1.0</version>
+  <description>SOCA native authentication hooks. Requires SOCA system plugin.</description>
+  <author>RESOAuth</author><creationDate>October 2026</creationDate><license>GPL-2.0-or-later</license>
+  <namespace path="src">RESOAuth\Plugin\Authentication\Soca</namespace>
+  <files><folder plugin="soca">services</folder><folder>src</folder></files>
+</extension>

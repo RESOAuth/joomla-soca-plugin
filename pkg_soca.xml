@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade">
+  <name>SOCA CIMD sign-in package</name><packagename>soca</packagename><version>0.1.0</version>
+  <description>System, authentication and user plugins for front-end SOCA sign-in.</description>
+  <author>RESOAuth</author><creationDate>October 2026</creationDate><license>GPL-2.0-or-later</license>
+  <files folder="packages"><file type="plugin" id="soca" group="system">plg_system_soca.zip</file><file type="plugin" id="soca" group="authentication">plg_authentication_soca.zip</file><file type="plugin" id="soca" group="user">plg_user_soca.zip</file></files>
+</extension>
