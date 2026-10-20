@@ -4,7 +4,7 @@
   <description>CIMD OpenID Connect sign-in. Local administrator login remains available. Preview release: review docs/requirements.md before deployment.</description>
   <author>RESOAuth</author><creationDate>October 2026</creationDate><license>GPL-2.0-or-later</license>
   <namespace path="src">RESOAuth\Plugin\System\Soca</namespace>
-  <files><folder plugin="soca">services</folder><folder>src</folder><folder>lib</folder><folder>vendor</folder><folder>sql</folder><filename>bootstrap.php</filename><filename>LICENSE</filename><filename>README.md</filename></files>
+  <files><folder plugin="soca">services</folder><folder>src</folder><folder>lib</folder><folder>vendor</folder><folder>sql</folder><folder>docs</folder><filename>bootstrap.php</filename><filename>LICENSE</filename><filename>README.md</filename><filename>SECURITY.md</filename></files>
   <install><sql><file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file></sql></install>
   <config><fields name="params"><fieldset name="basic" label="SOCA profile">
     <field name="profile" type="textarea" label="Profile JSON" rows="22" default="{}" description="Set canonical HTTPS origin, admission and opt-in provisioning. SOCA_CONFIG_FILE takes precedence. Secrets use SOCA_PRIVATE_KEY_FILE. Visit /administrator/index.php?soca=manage for checks and tests. Activation is enforced by revision-bound document and test evidence." />

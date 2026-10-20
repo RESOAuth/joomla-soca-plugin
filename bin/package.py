@@ -15,10 +15,10 @@ def add(archive, path, name):
 if build.exists(): shutil.rmtree(build)
 (build / 'packages').mkdir(parents=True)
 with ZipFile(build / 'packages/plg_system_soca.zip', 'w', ZIP_DEFLATED) as archive:
-    for directory in ['services', 'src', 'lib', 'vendor', 'sql']:
+    for directory in ['services', 'src', 'lib', 'vendor', 'sql', 'docs']:
         for path in sorted((root / directory).rglob('*')):
             if path.is_file(): add(archive, path, path.relative_to(root))
-    for name in ['bootstrap.php', 'soca.xml', 'LICENSE', 'README.md']: add(archive, root / name, name)
+    for name in ['bootstrap.php', 'soca.xml', 'LICENSE', 'README.md', 'SECURITY.md']: add(archive, root / name, name)
 for group in ['authentication', 'user']:
     source = root / 'plugins' / group / 'soca'
     with ZipFile(build / f'packages/plg_{group}_soca.zip', 'w', ZIP_DEFLATED) as archive:
