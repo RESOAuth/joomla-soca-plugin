@@ -21,7 +21,7 @@ if ! "$engine" inspect joomla-soca-demo-db > /dev/null 2>&1; then
   "$engine" run -d --name joomla-soca-demo-db -p 127.0.0.1:13408:3306 -e MARIADB_ROOT_PASSWORD=soca-disposable-local-test -e MARIADB_DATABASE=soca_joomla "$database" > /dev/null
 else "$engine" start joomla-soca-demo-db > /dev/null; fi
 for attempt in $(seq 1 60); do
-  if "$engine" exec joomla-soca-demo-db mariadb-admin -uroot -psoca-disposable-local-test ping --silent > /dev/null 2>&1; then break; fi
+  if "$engine" exec joomla-soca-demo-db mariadb --protocol=tcp -h127.0.0.1 -uroot -psoca-disposable-local-test -e "SELECT 1" > /dev/null 2>&1; then break; fi
   sleep 1
 done
 run() { "$engine" run --rm "${identity[@]}" -e COMPOSER_HOME=/tmp/soca-composer --network host -e JOOMLA_ROOT=/demo/site -v "$root:/plugin" -v "$runtime:/demo" -w /demo/site "$image" php "$@"; }
